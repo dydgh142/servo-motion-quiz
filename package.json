@@ -1,0 +1,16 @@
+{
+  "name": "motor-speed-quiz",
+  "version": "1.0.0",
+  "description": "A simple quiz app for motor speed calculations.",
+  "main": "index.js",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test"
+  },
+  "dependencies": {
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-scripts": "latest"
+  }
+}
