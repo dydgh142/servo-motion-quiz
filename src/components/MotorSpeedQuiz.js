@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 
 export default function MotorSpeedQuiz() {
   const [question, setQuestion] = useState("");
@@ -49,29 +51,17 @@ export default function MotorSpeedQuiz() {
   }
 
   return (
-    <div className="p-6 max-w-lg mx-auto text-center bg-white shadow-lg rounded-2xl">
-      <h2 className="text-xl font-bold mb-4">모터 속도 문제</h2>
-      <p className="text-lg mb-4">{question}</p>
-
-      {/* ShadCN이 없다면 일반 <input>으로 변경 */}
-      <input
+    <div className="p-6 bg-white shadow-lg rounded-2xl text-center">
+      <h2 className="text-lg font-bold mb-4">{question}</h2>
+      <Input
         type="number"
         value={userAnswer}
         onChange={(e) => setUserAnswer(e.target.value)}
         placeholder="정답을 입력하세요"
-        className="mb-4 border p-2 rounded"
+        className="mb-4"
       />
-
-      <div className="mt-4">
-        {/* ShadCN이 없다면 일반 <button>으로 변경 */}
-        <button onClick={checkAnswer} className="mr-2 p-2 bg-blue-500 text-white rounded">
-          정답 확인
-        </button>
-        <button onClick={generateQuestion} className="p-2 bg-gray-500 text-white rounded">
-          새 문제
-        </button>
-      </div>
-
+      <Button onClick={checkAnswer} className="mr-2">정답 확인</Button>
+      <Button onClick={generateQuestion} variant="secondary">새 문제</Button>
       {feedback && <p className="mt-4 text-lg font-semibold">{feedback}</p>}
     </div>
   );
